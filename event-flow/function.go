@@ -30,10 +30,13 @@ type Event struct {
 
 // EventPayload represents PubSub Data payload
 type EventPayload struct {
-	ID       string `json:"event_id"`
-	SourceID string `json:"source_id"`
-	SentOn   int    `json:"event_ts"`
-	Metric   int    `json:"metric"`
+	DeviceUD    string `json:"device_id"`
+	City        string `json:"city"`
+	Country     string `json:"country"`
+	Timestamp   string `json:"timestamp"`
+	Temperature string `json:"temperature"`
+	Humidity    string `json:"humidity"`
+	Pressure    string `json:"pressure"`
 }
 
 func handleEvents(rw http.ResponseWriter, req *http.Request) {
@@ -62,7 +65,7 @@ func handleEvents(rw http.ResponseWriter, req *http.Request) {
 	}
 
 	log.Printf("Data sent by device %q: [metric: %d, on: %v]",
-		event.Attributes["deviceId"], payload.Metric, payload.SentOn)
+		event.Attributes["deviceId"], payload.Temperature, payload.Timestamp)
 }
 
 func main() {

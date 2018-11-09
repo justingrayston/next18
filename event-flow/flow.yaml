@@ -10,8 +10,8 @@ spec:
     eventType: receive
     resource: gcppubsub/receive
     parameters:
-      projectID: s9-demo
-      topic: knative-iot-demo
+      projectID: jgrayston-serverless
+      topic: device-telemetry
   action:
     target:
       kind: Route
