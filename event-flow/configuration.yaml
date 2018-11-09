@@ -24,5 +24,5 @@ spec:
         knative.dev/type: container
     spec:
       container:
-        image: github.com/mchmarny/next18/event-flow
+        image: github.com/justingrayston/next18/event-flow
         imagePullPolicy: Always
